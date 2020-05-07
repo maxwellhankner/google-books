@@ -1,5 +1,5 @@
 import React from "react";
-
+// A slightly stylized footer
 function Footer() {
   return (
     <footer>

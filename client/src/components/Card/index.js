@@ -1,6 +1,9 @@
 import React from "react";
 
+// create function "Card", taking in icon, title, children as arguments
+
 function Card({ icon, title, children }) {
+  // returns the following block
   return (
     <div className="card mt-4">
       <div className="card-header">

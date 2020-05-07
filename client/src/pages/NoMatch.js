@@ -1,7 +1,9 @@
+// Import react, and needed components
 import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 
+// Functional component that returns a simple 404
 function NoMatch() {
   return (
     <Container fluid>

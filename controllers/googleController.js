@@ -1,3 +1,4 @@
+// Require axios and db
 const axios = require("axios");
 const db = require("../models");
 
@@ -7,12 +8,14 @@ const db = require("../models");
 
 // It also makes sure that the books returned from the API all contain a title, author, link, description, and image
 module.exports = {
+  // Method to find all the books in the google api with the given param
   findAll: function(req, res) {
     const { query: params } = req;
     axios
       .get("https://www.googleapis.com/books/v1/volumes", {
         params
       })
+      // Then filter out the books that are not saved by the user
       .then(results =>
         results.data.items.filter(
           result =>
@@ -24,6 +27,7 @@ module.exports = {
             result.volumeInfo.imageLinks.thumbnail
         )
       )
+      // Then filter out the books that the user has already saved and return that array to the user
       .then(apiBooks =>
         db.Book.find().then(dbBooks =>
           apiBooks.filter(apiBook =>

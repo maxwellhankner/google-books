@@ -1,3 +1,5 @@
+// create mongoose schema "bookSchema", with the following key value pairs
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -11,6 +13,8 @@ const bookSchema = new Schema({
   googleId: { type: String, required: true, unique: true }
 });
 
+// create constant "Book" to allow for export (I think this can be combined in to one line of code, but not sure how)
 const Book = mongoose.model("Book", bookSchema);
 
+// export "Book" for use elsewhere
 module.exports = Book;

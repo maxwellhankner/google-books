@@ -1,11 +1,17 @@
+// import dependencies
+
 import React from "react";
 import { ListItem } from "../List";
 import { Row, Col } from "../Grid";
 import "./style.css";
 
+// create function "Book", passing in title, subtitle, authors, link, description, image, Button as arguments
 function Book({ title, subtitle, authors, link, description, image, Button }) {
+  // return the following to the user
   return (
+    // calls ListItem component, then Grid component (contains row, col)
     <ListItem>
+      {/* className will render as class in the DOM */}
       <Row className="flex-wrap-reverse">
         <Col size="md-8">
           <h3 className="font-italic">{title}</h3>
@@ -37,4 +43,5 @@ function Book({ title, subtitle, authors, link, description, image, Button }) {
   );
 }
 
+// exporting function "Book" so it can be called elsewhere
 export default Book;
